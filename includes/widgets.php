@@ -98,4 +98,55 @@ $args_social = array(
 );
 register_sidebar( $args_social );
 
+
+function get_social_links(){
+
+  $links = [];
+  if(strlen($mod = get_theme_mod('facebook_link'))>0)
+    $links['facebook_link']  = (object) array(
+      'url'   => $mod,
+      'icon'  => 'fa-facebook',
+      'icon_square'  => 'fa-facebook-square',
+      'title' => __('Like us on Facebook', 'idt'),
+    );
+  if(strlen($mod = get_theme_mod('twitter_link'))>0)
+    $links['twitter_link']   = (object) array(
+      'url'   => $mod,
+      'icon'  => 'fa-twitter',
+      'icon_square'  => 'fa-twitter-square',
+      'title' => __('Follow us on Twitter', 'idt'),
+    );
+  if(strlen($mod = get_theme_mod('instagram_link'))>0)
+    $links['instagram_link'] = (object) array(
+      'url'   => $mod,
+      'icon'  => 'fa-instagram',
+      'icon_square'  => 'fa-instagram',
+      'title' => __('Our Instagram page', 'idt'),
+    );
+  if(strlen($mod = get_theme_mod('pinterest_link'))>0)
+    $links['pinterest_link'] = (object) array(
+      'url'   => $mod,
+      'icon'  => 'fa-pinterest',
+      'icon_square'  => 'fa-pinterest-square',
+      'title' => __('We are on pinterest', 'idt'),
+    );
+  if(strlen($mod = get_theme_mod('linkedin_link'))>0)
+    $links['linkedin_link']  = (object) array(
+      'url'   => $mod,
+      'icon'  => 'fa-linkedin',
+      'icon_square'  => 'fa-linkedin-square',
+      'title' => __('On LinkedIn', 'idt'),
+    );
+  if(strlen($mod = get_theme_mod('google_plus_link'))>0)
+    $links['google_plus_link']  = (object) array(
+      'url'   => $mod,
+      'icon'  => 'fa-google-plus',
+      'icon_square'  => 'fa-google-plus-square',
+      'title' => __('On Google+', 'idt'),
+    );
+
+  return $links;
+}
+
+
  ?>
